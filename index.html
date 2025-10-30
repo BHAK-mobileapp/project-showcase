@@ -30,9 +30,9 @@
     }
     .nav__wrap{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:10px 16px;}
     .brand{display:flex;gap:10px;align-items:center}
-    .logo{
+    .logo{ 
+      background:url('assets/logo.png') no-repeat center/contain;
       width:36px;height:36px;border-radius:10px;
-      background:conic-gradient(from 210deg at 50% 50%, var(--green), #75e1a1, var(--green));
       box-shadow: inset 0 0 20px rgba(0,0,0,.25), 0 2px 8px rgba(0,0,0,.25);
     }
     .brand h1{font-size:18px;margin:0}
@@ -50,7 +50,7 @@
     main{max-width:1100px;margin:24px auto;padding:0 16px}
     .hero{
       display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;margin-top:24px;
-    }
+    } 
     .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
     .hero h2{font-size:42px;line-height:1.12;margin:.2em 0}
     .hero p.lead{color:var(--muted);font-size:18px;margin:0 0 18px 0}
@@ -65,7 +65,27 @@
     .section{margin-top:24px}
     ul{margin:0 0 0 18px}
     .muted{color:var(--muted)}
-    .media{aspect-ratio:16/9;background:linear-gradient(135deg,#123,#245);border-radius:14px;border:1px dashed rgba(255,255,255,.2);display:grid;place-items:center;color:#bcd; font-size:14px}
+    .media{
+      width: 100%;
+      max-width: 100%;
+      border-radius:14px;
+      background:linear-gradient(135deg,#123,#245);
+      border:1px solid rgba(255,255,255,.2);
+    }
+    img.media {
+      display: block;
+      height: auto;
+      object-fit: contain;
+      width: 60%;
+      margin: 0 auto;
+    }
+    div.media {
+      aspect-ratio:16/9;
+      display:grid;
+      place-items:center;
+      color:#bcd;
+      font-size:14px;
+    }
     .foot{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px}
     footer{max-width:1100px;margin:40px auto;padding:0 16px 40px;color:#b6c7d9}
     @media (max-width:900px){
@@ -83,13 +103,13 @@
   <header class="nav">
     <div class="nav__wrap">
       <div class="brand">
-        <div class="logo" aria-hidden="true"></div>
+        <div class="logo" href="assets/logo.png" aria-hidden="true"></div>
         <h1>EcoTrade</h1>
       </div>
       <div class="cta">
         <a class="btn" href="#features">Tính năng</a>
         <a class="btn" href="#screens">Ảnh & Video</a>
-        <a class="btn primary" href="https://github.com/your-org/ecotrade_mobile" target="_blank" rel="noopener">GitHub Repo</a>
+        <a class="btn primary" href="https://github.com/BHAK-mobileapp/.github" target="_blank" rel="noopener">GitHub Repo</a>
       </div>
     </div>
   </header>
@@ -117,11 +137,8 @@
           <a class="btn" href="#contact">Liên hệ nhóm BHAK</a>
         </div>
       </div>
-      <div class="card">
-        <div class="media">Đặt ảnh hero: <code>/assets/hero.png</code></div>
-        <p class="muted" style="margin-top:10px">
-          Gợi ý: ảnh minh họa đồ cũ/đồ gia dụng, tone xanh lá. Đổi nội dung khung này bằng ảnh thật của nhóm.
-        </p>
+      <div class="media">
+        <img src="assets/hero.png" alt="App mockup" style="width:100%;border-radius:14px;box-shadow:var(--shadow);">
       </div>
     </section>
 
@@ -209,18 +226,17 @@
       </div>
     </section>
 
-    <section id="screens" class="section grid cols-2">
+    <section id="screens" class="section">
       <div class="card">
         <h3>Ảnh màn hình</h3>
-        <div class="media">Thay bằng ảnh: <code>/assets/screen_1.png</code></div>
-        <div class="media" style="margin-top:10px">Thay bằng ảnh: <code>/assets/screen_2.png</code></div>
-        <p class="muted">Đề xuất: Home, Onboarding, Đăng bài, Chi tiết sản phẩm, Chat.</p>
-      </div>
-      <div class="card">
-        <h3>Video demo</h3>
-        <div class="media">Nhúng video .mp4 hoặc YouTube: <code>/assets/demo.mp4</code></div>
-        <p class="muted">Kéo thả file video và dùng thẻ &lt;video&gt; hoặc iframe YouTube.</p>
-        <pre class="muted" style="overflow:auto;background:#0d1628;padding:10px;border-radius:8px"><code>&lt;video src="/assets/demo.mp4" controls width="100%"&gt;&lt;/video&gt;</code></pre>
+        <div style="max-width: 1000px; margin: 0 auto">
+          <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:16px">
+            <img src="assets/Welcome.png" alt="Welcome screen" class="media">
+            <img src="assets/Sign in.png" alt="Login screen" class="media">
+            <img src="assets/Home.png" alt="Home screen" class="media">
+            <img src="assets/Chat.png" alt="Chat screenshot" class="media">
+          </div>
+        </div>
       </div>
     </section>
 
@@ -237,12 +253,11 @@
       <div class="card">
         <h3>Nhóm BHAK</h3>
         <ul>
-          <li><b>Thành viên 1</b> — Leader / Backend</li>
-          <li><b>Thành viên 2</b> — Mobile</li>
-          <li><b>Thành viên 3</b> — UI/UX & Testing</li>
-          <li><b>Thành viên 4</b> — Data & Analytics</li>
+          <li><b>Trần Ngọc Khánh Huy</b> — Leader / Backend</li>
+          <li><b>Ngô Quang Anh</b> — Mobile</li>
+          <li><b>Mai Quốc Bình</b> — UI/UX & Testing</li>
+          <li><b>Huỳnh Nguyễn Phúc Khang</b> — Data & Analytics</li>
         </ul>
-        <p class="muted">Cập nhật tên thật & vai trò từng người để thầy/cô dễ đánh giá.</p>
       </div>
     </section>
 
@@ -250,10 +265,10 @@
       <h3>Lộ trình (đến 31/12/2025)</h3>
       <table>
         <tr><th>Thời gian</th><th>Hạng mục</th><th>Kết quả</th></tr>
-        <tr><td>10/2025</td><td>Khảo sát & Canvas</td><td>Báo cáo khảo sát, KPI</td></tr>
-        <tr><td>11/2025</td><td>Thiết kế & Kiến trúc</td><td>Figma + ERD</td></tr>
-        <tr><td>11–12/2025</td><td>Phát triển MVP</td><td>Auth, Đăng bài, Tìm kiếm, Chat</td></tr>
-        <tr><td>12/2025</td><td>Kiểm thử & Showcase</td><td>APK + Demo video + GitHub Pages</td></tr>
+        <tr><td>09/2025</td><td>Khảo sát & Canvas</td><td>Báo cáo khảo sát, KPI</td></tr>
+        <tr><td>10/2025</td><td>Thiết kế & Kiến trúc</td><td>Figma + ERD</td></tr>
+        <tr><td>10-11/2025</td><td>Phát triển MVP</td><td>Auth, Đăng bài, Tìm kiếm, Chat</td></tr>
+        <tr><td>11/2025</td><td>Tạo Showcase</td><td>GitHub Pages</td></tr>
       </table>
     </section>
 
@@ -261,23 +276,20 @@
       <div class="card">
         <h3>Liên kết quan trọng</h3>
         <ul>
-          <li>GitHub repo: <a href="https://github.com/your-org/ecotrade_mobile" target="_blank">your-org/ecotrade_mobile</a></li>
-          <li>GitHub Organization: <a href="https://github.com/your-org" target="_blank">your-org</a></li>
+          <li>GitHub repo: <a href="https://github.com/BHAK-mobileapp/.github" target="_blank">https://github.com/BHAK-mobileapp/.github</a></li>
+          <li>GitHub Organization: <a href="https://github.com/BHAK-mobileapp" target="_blank">https://github.com/BHAK-mobileapp</a></li>
           <li>Slide Showcase: <a href="#" target="_blank">link.pdf</a></li>
           <li>APK demo (nếu có): <a href="#" target="_blank">Tải về</a></li>
         </ul>
       </div>
       <div id="contact" class="card">
         <h3>Liên hệ</h3>
-        <p>Email: <a href="mailto:contact@ecotrade.app">contact@ecotrade.app</a> — hoặc tạo Issue trên GitHub.</p>
+        <p>Email: <a href="huy.tranrosenberg@hcmut.edu.vn">Huy Tran</a> — hoặc tạo Issue trên GitHub.</p>
         <p class="muted">© Nhóm BHAK — Dự án học tập, phục vụ cộng đồng.</p>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>Trang showcase tĩnh — có thể host trên <b>GitHub Pages</b>. Thay thế placeholder <code>/assets/*.png</code> bằng ảnh thật để dự án trông chuyên nghiệp.</p>
-  </footer>
 </body>
 </html>
 """
