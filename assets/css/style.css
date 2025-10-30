@@ -28,7 +28,7 @@ header.nav{
   width:36px;height:36px;border-radius:10px;
   box-shadow: 0 2px 8px rgba(0,0,0,.1);
 }
-.brand h1{font-size:18px;margin:0}
+.brand h1{font-size:30px;margin:0}
 .cta{display:flex;gap:10px}
 .btn{
   border:1px solid rgba(0,0,0,.1);
